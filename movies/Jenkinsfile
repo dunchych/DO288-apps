@@ -28,7 +28,7 @@ pipeline {
             steps {
               echo '### trying simle podman build ###'
               sh '''
-                sudo podman build -t test-php .
+                podman build -t test-php .
                 '''
             }
          }
