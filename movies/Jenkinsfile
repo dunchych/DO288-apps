@@ -24,7 +24,16 @@ pipeline {
 
     stages {
 
-        stage('Compilation Check') {
+         stage('Trying podman') {
+            steps {
+              echo '### trying simle podman build ###'
+              sh '''
+                sudo podman build -t test-php .
+                '''
+            }
+         }
+
+         stage('Compilation Check') {
             steps {
                 echo '### Checking for compile errors ###'
                 sh '''
